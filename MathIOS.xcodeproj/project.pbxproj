@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB6E69261C79B9CD00B4DCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */; };
+		DB6E69281C79B9CD00B4DCCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E69271C79B9CD00B4DCCF /* ViewController.swift */; };
+		DB6E692B1C79B9CD00B4DCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB6E69291C79B9CD00B4DCCF /* Main.storyboard */; };
+		DB6E692D1C79B9CD00B4DCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB6E692C1C79B9CD00B4DCCF /* Assets.xcassets */; };
+		DB6E69301C79B9CD00B4DCCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB6E692E1C79B9CD00B4DCCF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB6E69221C79B9CD00B4DCCF /* MathIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB6E69271C79B9CD00B4DCCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB6E692A1C79B9CD00B4DCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB6E692C1C79B9CD00B4DCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB6E692F1C79B9CD00B4DCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB6E69311C79B9CD00B4DCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB6E691F1C79B9CD00B4DCCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB6E69191C79B9CD00B4DCCF = {
+			isa = PBXGroup;
+			children = (
+				DB6E69241C79B9CD00B4DCCF /* MathIOS */,
+				DB6E69231C79B9CD00B4DCCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB6E69231C79B9CD00B4DCCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E69221C79B9CD00B4DCCF /* MathIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB6E69241C79B9CD00B4DCCF /* MathIOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */,
+				DB6E69271C79B9CD00B4DCCF /* ViewController.swift */,
+				DB6E69291C79B9CD00B4DCCF /* Main.storyboard */,
+				DB6E692C1C79B9CD00B4DCCF /* Assets.xcassets */,
+				DB6E692E1C79B9CD00B4DCCF /* LaunchScreen.storyboard */,
+				DB6E69311C79B9CD00B4DCCF /* Info.plist */,
+			);
+			path = MathIOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB6E69211C79B9CD00B4DCCF /* MathIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB6E69341C79B9CD00B4DCCF /* Build configuration list for PBXNativeTarget "MathIOS" */;
+			buildPhases = (
+				DB6E691E1C79B9CD00B4DCCF /* Sources */,
+				DB6E691F1C79B9CD00B4DCCF /* Frameworks */,
+				DB6E69201C79B9CD00B4DCCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MathIOS;
+			productName = MathIOS;
+			productReference = DB6E69221C79B9CD00B4DCCF /* MathIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB6E691A1C79B9CD00B4DCCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nikita Gil'";
+				TargetAttributes = {
+					DB6E69211C79B9CD00B4DCCF = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = DB6E691D1C79B9CD00B4DCCF /* Build configuration list for PBXProject "MathIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB6E69191C79B9CD00B4DCCF;
+			productRefGroup = DB6E69231C79B9CD00B4DCCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB6E69211C79B9CD00B4DCCF /* MathIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB6E69201C79B9CD00B4DCCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E69301C79B9CD00B4DCCF /* LaunchScreen.storyboard in Resources */,
+				DB6E692D1C79B9CD00B4DCCF /* Assets.xcassets in Resources */,
+				DB6E692B1C79B9CD00B4DCCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB6E691E1C79B9CD00B4DCCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E69281C79B9CD00B4DCCF /* ViewController.swift in Sources */,
+				DB6E69261C79B9CD00B4DCCF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB6E69291C79B9CD00B4DCCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB6E692A1C79B9CD00B4DCCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB6E692E1C79B9CD00B4DCCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB6E692F1C79B9CD00B4DCCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB6E69321C79B9CD00B4DCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB6E69331C79B9CD00B4DCCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB6E69351C79B9CD00B4DCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MathIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB6E69361C79B9CD00B4DCCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MathIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB6E691D1C79B9CD00B4DCCF /* Build configuration list for PBXProject "MathIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB6E69321C79B9CD00B4DCCF /* Debug */,
+				DB6E69331C79B9CD00B4DCCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB6E69341C79B9CD00B4DCCF /* Build configuration list for PBXNativeTarget "MathIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB6E69351C79B9CD00B4DCCF /* Debug */,
+				DB6E69361C79B9CD00B4DCCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB6E691A1C79B9CD00B4DCCF /* Project object */;
+}
