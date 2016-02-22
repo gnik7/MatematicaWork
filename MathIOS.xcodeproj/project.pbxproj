@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5C195C62E6895DB014404A /* libPods-MathIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D67C99758E94839CE6697E0B /* libPods-MathIOS.a */; };
+		DB1E27F11C79FA75004A5662 /* MathIOS-Bridge-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E27F01C79FA75004A5662 /* MathIOS-Bridge-Header.m */; };
+		DB1E27F71C79FB60004A5662 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E27F61C79FB60004A5662 /* ServerManager.swift */; };
+		DB1E27F91C7A00FF004A5662 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E27F81C7A00FF004A5662 /* PostModel.swift */; };
+		DB1E27FD1C7A14EB004A5662 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E27FC1C7A14EB004A5662 /* PostsViewController.swift */; };
+		DB1E27FF1C7A1B06004A5662 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E27FE1C7A1B06004A5662 /* PostCell.swift */; };
+		DB1E28011C7A1D90004A5662 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E28001C7A1D90004A5662 /* UserModel.swift */; };
+		DB1E28031C7A253F004A5662 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E28021C7A253F004A5662 /* DetailPostViewController.swift */; };
+		DB1E28051C7A3B74004A5662 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E28041C7A3B74004A5662 /* CommentModel.swift */; };
+		DB1E28071C7A3F3E004A5662 /* DetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E28061C7A3F3E004A5662 /* DetailPostCell.swift */; };
+		DB1E280A1C7A4F03004A5662 /* AlbomUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E28091C7A4F03004A5662 /* AlbomUsersViewController.swift */; };
+		DB1E280C1C7A506A004A5662 /* AlbomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E280B1C7A506A004A5662 /* AlbomModel.swift */; };
+		DB1E280E1C7A533C004A5662 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E280D1C7A533C004A5662 /* PhotosModel.swift */; };
 		DB6E69261C79B9CD00B4DCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */; };
 		DB6E69281C79B9CD00B4DCCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E69271C79B9CD00B4DCCF /* ViewController.swift */; };
 		DB6E692B1C79B9CD00B4DCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB6E69291C79B9CD00B4DCCF /* Main.storyboard */; };
@@ -15,6 +28,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EAE5A940323A84D76A41F30 /* Pods-MathIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MathIOS/Pods-MathIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		22D128261071A8DA3AA84BC8 /* Pods-MathIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MathIOS/Pods-MathIOS.release.xcconfig"; sourceTree = "<group>"; };
+		D67C99758E94839CE6697E0B /* libPods-MathIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MathIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1E27EF1C79FA74004A5662 /* MathIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MathIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB1E27F01C79FA75004A5662 /* MathIOS-Bridge-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MathIOS-Bridge-Header.m"; sourceTree = "<group>"; };
+		DB1E27F61C79FB60004A5662 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		DB1E27F81C7A00FF004A5662 /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		DB1E27FC1C7A14EB004A5662 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		DB1E27FE1C7A1B06004A5662 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		DB1E28001C7A1D90004A5662 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DB1E28021C7A253F004A5662 /* DetailPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		DB1E28041C7A3B74004A5662 /* CommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		DB1E28061C7A3F3E004A5662 /* DetailPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostCell.swift; sourceTree = "<group>"; };
+		DB1E28091C7A4F03004A5662 /* AlbomUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbomUsersViewController.swift; sourceTree = "<group>"; };
+		DB1E280B1C7A506A004A5662 /* AlbomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbomModel.swift; sourceTree = "<group>"; };
+		DB1E280D1C7A533C004A5662 /* PhotosModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		DB6E69221C79B9CD00B4DCCF /* MathIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB6E69271C79B9CD00B4DCCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +58,87 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5C195C62E6895DB014404A /* libPods-MathIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6613895D322B0F1CB7F5B628 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EAE5A940323A84D76A41F30 /* Pods-MathIOS.debug.xcconfig */,
+				22D128261071A8DA3AA84BC8 /* Pods-MathIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CAF7C22E2EDA00A583456D3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D67C99758E94839CE6697E0B /* libPods-MathIOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB1E27F21C79FB20004A5662 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E27F51C79FB49004A5662 /* Manager */,
+				DB1E27F41C79FB43004A5662 /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DB1E27F41C79FB43004A5662 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E27F81C7A00FF004A5662 /* PostModel.swift */,
+				DB1E28001C7A1D90004A5662 /* UserModel.swift */,
+				DB1E28041C7A3B74004A5662 /* CommentModel.swift */,
+				DB1E280B1C7A506A004A5662 /* AlbomModel.swift */,
+				DB1E280D1C7A533C004A5662 /* PhotosModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB1E27F51C79FB49004A5662 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E27F61C79FB60004A5662 /* ServerManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DB1E27FA1C7A0F16004A5662 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E27FC1C7A14EB004A5662 /* PostsViewController.swift */,
+				DB1E27FE1C7A1B06004A5662 /* PostCell.swift */,
+				DB1E28021C7A253F004A5662 /* DetailPostViewController.swift */,
+				DB1E28061C7A3F3E004A5662 /* DetailPostCell.swift */,
+				DB1E28091C7A4F03004A5662 /* AlbomUsersViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB1E27FB1C7A0F2F004A5662 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		DB6E69191C79B9CD00B4DCCF = {
 			isa = PBXGroup;
 			children = (
+				DB1E27EF1C79FA74004A5662 /* MathIOS-Bridging-Header.h */,
+				DB1E27F01C79FA75004A5662 /* MathIOS-Bridge-Header.m */,
 				DB6E69241C79B9CD00B4DCCF /* MathIOS */,
 				DB6E69231C79B9CD00B4DCCF /* Products */,
+				6613895D322B0F1CB7F5B628 /* Pods */,
+				CAF7C22E2EDA00A583456D3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +153,9 @@
 		DB6E69241C79B9CD00B4DCCF /* MathIOS */ = {
 			isa = PBXGroup;
 			children = (
+				DB1E27FB1C7A0F2F004A5662 /* Resourses */,
+				DB1E27FA1C7A0F16004A5662 /* Controllers */,
+				DB1E27F21C79FB20004A5662 /* Network */,
 				DB6E69251C79B9CD00B4DCCF /* AppDelegate.swift */,
 				DB6E69271C79B9CD00B4DCCF /* ViewController.swift */,
 				DB6E69291C79B9CD00B4DCCF /* Main.storyboard */,
@@ -71,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB6E69341C79B9CD00B4DCCF /* Build configuration list for PBXNativeTarget "MathIOS" */;
 			buildPhases = (
+				6F9646D28632E2A0C89A94BC /* Check Pods Manifest.lock */,
 				DB6E691E1C79B9CD00B4DCCF /* Sources */,
 				DB6E691F1C79B9CD00B4DCCF /* Frameworks */,
 				DB6E69201C79B9CD00B4DCCF /* Resources */,
+				F088EFBF69F735ECED9C62EC /* Embed Pods Frameworks */,
+				02C67D2F9470B1899976488C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +235,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02C67D2F9470B1899976488C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MathIOS/Pods-MathIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F9646D28632E2A0C89A94BC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F088EFBF69F735ECED9C62EC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MathIOS/Pods-MathIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB6E691E1C79B9CD00B4DCCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1E280E1C7A533C004A5662 /* PhotosModel.swift in Sources */,
+				DB1E27FF1C7A1B06004A5662 /* PostCell.swift in Sources */,
+				DB1E27FD1C7A14EB004A5662 /* PostsViewController.swift in Sources */,
+				DB1E280C1C7A506A004A5662 /* AlbomModel.swift in Sources */,
+				DB1E28011C7A1D90004A5662 /* UserModel.swift in Sources */,
+				DB1E27F71C79FB60004A5662 /* ServerManager.swift in Sources */,
+				DB1E27F91C7A00FF004A5662 /* PostModel.swift in Sources */,
+				DB1E280A1C7A4F03004A5662 /* AlbomUsersViewController.swift in Sources */,
+				DB1E28031C7A253F004A5662 /* DetailPostViewController.swift in Sources */,
+				DB1E27F11C79FA75004A5662 /* MathIOS-Bridge-Header.m in Sources */,
+				DB1E28071C7A3F3E004A5662 /* DetailPostCell.swift in Sources */,
+				DB1E28051C7A3B74004A5662 /* CommentModel.swift in Sources */,
 				DB6E69281C79B9CD00B4DCCF /* ViewController.swift in Sources */,
 				DB6E69261C79B9CD00B4DCCF /* AppDelegate.swift in Sources */,
 			);
@@ -247,23 +412,30 @@
 		};
 		DB6E69351C79B9CD00B4DCCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EAE5A940323A84D76A41F30 /* Pods-MathIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MathIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MathIOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DB6E69361C79B9CD00B4DCCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D128261071A8DA3AA84BC8 /* Pods-MathIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MathIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MathIOS-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -286,6 +458,7 @@
 				DB6E69361C79B9CD00B4DCCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
