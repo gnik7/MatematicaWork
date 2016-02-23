@@ -123,7 +123,10 @@ class TutorialViewController: UIViewController , UIPageViewControllerDataSource,
         } else if index == pageContent.count {
             
             dispatch_async(dispatch_get_main_queue()) {
-                self.pageViewController?.removeFromParentViewController()
+                let vc : PostsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PostsViewController") as! PostsViewController
+                self.pageViewController?.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: { finished -> Void in
+                    
+                })
             }
             
  
