@@ -225,7 +225,6 @@
 				TargetAttributes = {
 					DB6E69211C79B9CD00B4DCCF = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = L7XDW9NEX9;
 					};
 				};
 			};
@@ -457,7 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2924b72c-e159-4b37-8fe4-45fb2ff24aea";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MathIOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -477,7 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gil.MathIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2924b72c-e159-4b37-8fe4-45fb2ff24aea";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MathIOS-Bridging-Header.h";
 			};
 			name = Release;
