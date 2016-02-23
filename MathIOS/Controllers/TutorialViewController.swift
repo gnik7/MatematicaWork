@@ -18,13 +18,53 @@ class TutorialViewController: UIViewController , UIPageViewControllerDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createContentPages()
-        
-        createPageViewController()
-        setupPageControl()
-        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.objectForKey("TutorialCount") == nil {
+            
+            let counter: Int = 1
+            
+            userDefaults.setObject(counter, forKey: "TutorialCount")
+            userDefaults.synchronize()
+            
+            createContentPages()
+            createPageViewController()
+            setupPageControl()
+            
+        } else {
+            var counter : Int = userDefaults.objectForKey("TutorialCount") as! Int
+            if counter < 4 {
+                counter++
+                userDefaults.setObject(counter, forKey: "TutorialCount")
+                
+                userDefaults.synchronize()
+                createContentPages()
+                createPageViewController()
+                setupPageControl()
+                
+            }
+        }        
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidLoad()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if userDefaults.objectForKey("TutorialCount") != nil {
+            let counter : Int = userDefaults.objectForKey("TutorialCount") as! Int
+            if counter == 4 {
+
+                let tab = self.storyboard?.instantiateViewControllerWithIdentifier("TabContrl") as! UITabBarController
+                self.view.window!.rootViewController = tab
+                let  window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                window.makeKeyAndVisible()
+
+
+            }
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,22 +162,21 @@ class TutorialViewController: UIViewController , UIPageViewControllerDataSource,
             return viewControllerAtIndex(index)
         } else if index == pageContent.count {
             
-            dispatch_async(dispatch_get_main_queue()) {
+            let tab = self.storyboard?.instantiateViewControllerWithIdentifier("TabContrl") as! UITabBarController
+            self.view.window!.rootViewController = tab
+            let  window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window.makeKeyAndVisible()
+
+            /*
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let vc : PostsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PostsViewController") as! PostsViewController
-                self.pageViewController?.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: { finished -> Void in
+                self.pageViewController!.view.removeFromSuperview()
+                self.pageViewController?.removeFromParentViewController()
+                self.presentViewController(vc, animated: true, completion: { () -> Void in
                     
                 })
-            }
-            
- 
-//            let vc : PostsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PostsViewController") as! PostsViewController
-//            self.pageViewController?.removeFromParentViewController()
-//            
-//            self.dismissViewControllerAnimated(true, completion: { () -> Void in
-//                self.presentViewController(vc, animated: true, completion: { () -> Void in
-//                   
-//                })
-//            })
+            })*/
+           
         }
         return nil
     }
@@ -150,6 +189,7 @@ class TutorialViewController: UIViewController , UIPageViewControllerDataSource,
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int{
         return  0
     }
+
     
     
     

@@ -36,7 +36,8 @@ class AlbumPhotoCollection: UIViewController, UICollectionViewDataSource, UIColl
         
         
         navigationController?.navigationBarHidden = false
-        
+        if Reachability.isConnectedToNetwork() == true {
+            
         createProgressHUD()
         
         ServerManager.sharedInstance.getAllPhotos({ (response) -> Void in
@@ -55,6 +56,10 @@ class AlbumPhotoCollection: UIViewController, UICollectionViewDataSource, UIColl
             },failure:  { (errorMessage) -> Void in
                 self.hideProgressHUD()
         })
+        } else {
+            
+            ServerManager.sharedInstance.alertMessage("Info", message:"Internet connection faild")
+        }
         
     }
     

@@ -12,6 +12,7 @@ import Foundation
 class ServerManager: NSObject {
     
     var requestOperationManager : AFHTTPSessionManager!
+    var hud                     : MBProgressHUD!
        
     class var sharedInstance: ServerManager {
         struct Static {
@@ -25,16 +26,7 @@ class ServerManager: NSObject {
     }
     
     override init(){
-        //get token from info.plist
-//        var myDict: NSDictionary?
-//        
-//        if let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist") {
-//            myDict = NSDictionary(contentsOfFile: path)
-//        }
-//        if let dict = myDict {
-//            self.mainUrl = dict.objectForKey("api_url") as! String
-//        }
-        
+
         let url: NSURL = NSURL(string: "http://jsonplaceholder.typicode.com/")!
         self.requestOperationManager = AFHTTPSessionManager(baseURL: url)
         self.requestOperationManager.requestSerializer = AFJSONRequestSerializer()
@@ -48,7 +40,8 @@ class ServerManager: NSObject {
 
     
    func getAllPosts(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
-     
+    
+    
         let path : String = "posts"
         self.requestOperationManager.GET(path,
             parameters: nil,
@@ -67,11 +60,12 @@ class ServerManager: NSObject {
             } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error)
         })
+
     }
     
     //-------------------------------------------
     func getAllUsers(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
-        
+       
         let path : String = "users"
         self.requestOperationManager.GET(path,
             parameters: nil,
@@ -90,6 +84,7 @@ class ServerManager: NSObject {
             } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error)
         })
+
     }
     //-------------------------------------------
     func getPostById(postId: NSInteger ,success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
@@ -117,6 +112,7 @@ class ServerManager: NSObject {
             } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error)
         })
+
     }
     //-------------------------------------------
 
@@ -140,11 +136,13 @@ class ServerManager: NSObject {
             } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error)
         })
+     
+        
     }
     //-------------------------------------------
     
     func getAllPhotos(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
-        
+       
         let path : String = "photos"
         self.requestOperationManager.GET(path,
             parameters: nil,
@@ -163,11 +161,41 @@ class ServerManager: NSObject {
             } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error)
         })
+        
     }
-
-
     
-   
+    //--------------------------------------------
+    // MARK: - MESSAGE
+    //--------------------------------------------
+    func alertMessage(title: String, message: String ) {
+        let alert = UIAlertController(title: title ,
+            message: message,
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK" , style: UIAlertActionStyle.Default, handler: nil))
+        let alertWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    //--------------------------------------------
+    // MARK: - Progress
+    //--------------------------------------------
+    
+    //-----------------------------------------
+    func createProgressHUD(){
+
+        hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().delegate?.window??.rootViewController?.view, animated: true)
+        hud.labelText = "Loading"
+    }
+    //-----------------------------------------
+    func hideProgressHUD(){
+        let window = UIApplication.sharedApplication().delegate?.window??.rootViewController?.view
+        MBProgressHUD.hideHUDForView(window, animated: true)
+        self.hud = nil
+    }
 
 
 

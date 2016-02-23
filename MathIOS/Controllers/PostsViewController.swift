@@ -16,7 +16,7 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var postTableView: UITableView!
     
-    var hud                     : MBProgressHUD!
+    
     
     
     //--------------------------------------------
@@ -30,8 +30,9 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.postTableView.delegate = self
         
         postsArray = Array<PostModel>()
+       if Reachability.isConnectedToNetwork() == true {
         
-        createProgressHUD()
+        ServerManager.sharedInstance.createProgressHUD()
         
         ServerManager.sharedInstance.getAllPosts({ (response) -> Void in
             
@@ -41,17 +42,22 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 self.usersArray = response as NSArray as! Array<UserModel>
                 self.postTableView.reloadData()
-                self.hideProgressHUD()
+                ServerManager.sharedInstance.hideProgressHUD()
                 }, failure: { (errorMessage) -> Void in
-                 self.hideProgressHUD()
+                 ServerManager.sharedInstance.hideProgressHUD()
             })            
             
             },failure:  { (errorMessage) -> Void in
-              self.hideProgressHUD()
+              ServerManager.sharedInstance.hideProgressHUD()
         })
+        
+    } else {
+    
+       ServerManager.sharedInstance.alertMessage("Info", message:"Internet connection faild")
+    }
 
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,23 +103,8 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     //--------------------------------------------
     
-    //--------------------------------------------
-    // MARK: - Progress
-    //--------------------------------------------
-    
-    //-----------------------------------------
-    func createProgressHUD(){
-        
-        hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().delegate?.window??.rootViewController?.view, animated: true)
-        hud.labelText = "Loading"
-    }
-    //-----------------------------------------
-    func hideProgressHUD(){
-        let window = UIApplication.sharedApplication().delegate?.window??.rootViewController?.view
-        MBProgressHUD.hideHUDForView(window, animated: true)
-        self.hud = nil
-    }
-
+      
+   
 
 }
 

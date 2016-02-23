@@ -39,7 +39,8 @@ class DetailPostViewController: UIViewController, UITableViewDataSource, UITable
         bodyTextView.text = bodyPost
         
         commentTableView.tableFooterView = UIView()
-        
+        if Reachability.isConnectedToNetwork() == true {
+  
         createProgressHUD()
         
         ServerManager.sharedInstance.getPostById(postId,
@@ -51,6 +52,10 @@ class DetailPostViewController: UIViewController, UITableViewDataSource, UITable
             },failure:  { (errorMessage) -> Void in
                 self.hideProgressHUD()
         })
+        } else {
+            
+            ServerManager.sharedInstance.alertMessage("Info", message:"Internet connection faild")
+        }
               
     }
     

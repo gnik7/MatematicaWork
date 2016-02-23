@@ -37,6 +37,12 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
         containerArray = Array<Int>()
         tmpArray = Array<Int>()
         
+        searchUsers.text = ""
+        searchUsers.resignFirstResponder()
+        searchUsers.showsCancelButton = false
+        
+        if Reachability.isConnectedToNetwork() == true {
+            
         createProgressHUD()
         
         ServerManager.sharedInstance.getAllAlbums({ (response) -> Void in
@@ -76,6 +82,11 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
                 self.hideProgressHUD()
         })
         
+    } else {
+    
+    ServerManager.sharedInstance.alertMessage("Info", message:"Internet connection faild")
+    }
+    
         usersTableView.tableFooterView = UIView()
         
     }
