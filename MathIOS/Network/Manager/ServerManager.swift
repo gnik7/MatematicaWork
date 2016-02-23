@@ -11,10 +11,8 @@ import Foundation
 
 class ServerManager: NSObject {
     
-    var requestOperationManager: AFHTTPSessionManager!
-    
-
-    
+    var requestOperationManager : AFHTTPSessionManager!
+       
     class var sharedInstance: ServerManager {
         struct Static {
             static var onceToken: dispatch_once_t = 0
@@ -44,6 +42,10 @@ class ServerManager: NSObject {
 
     }
     
+    //--------------------------------------------
+    // MARK: - API CALLS
+    //--------------------------------------------
+
     
    func getAllPosts(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
      
@@ -67,7 +69,7 @@ class ServerManager: NSObject {
         })
     }
     
-    
+    //-------------------------------------------
     func getAllUsers(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
         
         let path : String = "users"
@@ -89,7 +91,7 @@ class ServerManager: NSObject {
                 print(error)
         })
     }
-    
+    //-------------------------------------------
     func getPostById(postId: NSInteger ,success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
         
         let path : String = "comments?"
@@ -116,6 +118,7 @@ class ServerManager: NSObject {
                 print(error)
         })
     }
+    //-------------------------------------------
 
     func getAllAlbums(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
         
@@ -138,6 +141,33 @@ class ServerManager: NSObject {
                 print(error)
         })
     }
+    //-------------------------------------------
+    
+    func getAllPhotos(success:(response: NSArray)->Void, failure:(errorMessage:String?) -> Void){
+        
+        let path : String = "photos"
+        self.requestOperationManager.GET(path,
+            parameters: nil,
+            progress: nil,
+            success: { (task:NSURLSessionDataTask , responceObject:AnyObject?) -> Void in
+                
+                let dictArr: NSArray = responceObject as! NSArray
+                let objectsArr: NSMutableArray = NSMutableArray()
+                for dict in dictArr {
+                    let postModel = PhotosModel(responseObject: dict as! NSDictionary)
+                    objectsArr.addObject(postModel)
+                }
+                success(response: objectsArr)
+                
+                
+            } , failure: { (operation:NSURLSessionDataTask?, error: NSError) -> Void in
+                print(error)
+        })
+    }
+
+
+    
+   
 
 
 

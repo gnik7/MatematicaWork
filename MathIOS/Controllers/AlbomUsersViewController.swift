@@ -14,9 +14,12 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchUsers: UISearchBar!
     @IBOutlet weak var usersTableView: UITableView!
     
-    var usersArray : Array<UserModel>!
-    var albomsArray : Array<AlbomModel>!
-    var containerArray : Array<Int>!
+    var usersArray      : Array<UserModel>!
+    var albomsArray     : Array<AlbomModel>!
+    var containerArray  : Array<Int>!
+    var tmpArray        : Array<Int>!
+    
+    var hud             : MBProgressHUD!
     
     //--------------------------------------------
     // MARK: - INIT
@@ -27,11 +30,14 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
         
         self.usersTableView.dataSource = self
         self.usersTableView.delegate = self
+        self.searchUsers.delegate = self
         
         usersArray = Array<UserModel>()
         albomsArray = Array<AlbomModel>()
         containerArray = Array<Int>()
+        tmpArray = Array<Int>()
         
+        createProgressHUD()
         
         ServerManager.sharedInstance.getAllAlbums({ (response) -> Void in
             
@@ -58,13 +64,16 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
                     
                 }
                 
+                self.tmpArray = self.containerArray
+                
                 self.usersTableView.reloadData()
+                self.hideProgressHUD()
                 }, failure: { (errorMessage) -> Void in
-                    
+                    self.hideProgressHUD()
             })
             
             },failure:  { (errorMessage) -> Void in
-                
+                self.hideProgressHUD()
         })
         
         usersTableView.tableFooterView = UIView()
@@ -81,16 +90,16 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
     //--------------------------------------------
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return containerArray.count
+        return tmpArray.count
     }
     //--------------------------------------------
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        if containerArray.count > 0 {
+        if tmpArray.count > 0 {
             for user in usersArray {
-                if containerArray[indexPath.row] == user.userID.integerValue {
+                if tmpArray[indexPath.row] == user.userID.integerValue {
                     cell.textLabel?.text = user.name
                     cell.tag = user.userID.integerValue
                 }
@@ -103,14 +112,20 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
     //--------------------------------------------
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let postM = postsArray[indexPath.row] as PostModel
-//        
-//        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("DetailPostViewController") as! DetailPostViewController
-//        vc.postId = postM.postID.integerValue
-//        vc.titlePost = postM.title
-//        vc.bodyPost = postM.body
-//        
-//        self.presentViewController(vc, animated: true, completion: nil)
+        
+        let userId = tmpArray[indexPath.row]
+        
+        var albumsUserArray = Array<Int>()
+        
+        for album in self.albomsArray {
+            if album.userID.integerValue == userId {
+                albumsUserArray.append(album.albomID.integerValue)
+            }
+        }
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AlbumPhotoCollection") as! AlbumPhotoCollection
+        vc.albumsIDArray = albumsUserArray
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     //--------------------------------------------
 
@@ -119,6 +134,8 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
     //--------------------------------------------
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
         searchUsers.text = ""
+        
+        
         return true
     }
     //--------------------------------------------
@@ -129,50 +146,52 @@ class AlbomUsersViewController: UIViewController, UITableViewDataSource, UITable
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchUsers.resignFirstResponder()
         searchUsers.showsCancelButton = false
+        searchUsers.text = ""
+        self.tmpArray = self.containerArray
+        self.usersTableView.reloadData()
     }
     
     //--------------------------------------------
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        self.tmpArray = Array<Int>()
+        for user in self.usersArray {
+            if (user.name.lowercaseString).hasPrefix(searchText.lowercaseString) {
+                self.tmpArray.append(user.userID.integerValue)
+                print(user.name.lowercaseString)
+            }
+        }
+        self.usersTableView.reloadData()
     }
     
     //--------------------------------------------
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchUsers.resignFirstResponder()
         searchUsers.showsCancelButton = false
+        searchUsers.text = ""
+        self.tmpArray = self.containerArray
+        self.usersTableView.reloadData()
     }
     //--------------------------------------------
+    
+    //--------------------------------------------
+    // MARK: - Progress
+    //--------------------------------------------
+    
+    //-----------------------------------------
+    func createProgressHUD(){
+        
+        hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().delegate?.window??.rootViewController?.view, animated: true)
+        hud.labelText = "Loading"
+    }
+    //-----------------------------------------
+    func hideProgressHUD(){
+        let window = UIApplication.sharedApplication().delegate?.window??.rootViewController?.view
+        MBProgressHUD.hideHUDForView(window, animated: true)
+        self.hud = nil
+    }
+
     
 }
 
 
-/*
-optional public func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool // return NO to not become first responder
-@available(iOS 2.0, *)
-optional public func searchBarTextDidBeginEditing(searchBar: UISearchBar) // called when text starts editing
-@available(iOS 2.0, *)
-optional public func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool // return NO to not resign first responder
-@available(iOS 2.0, *)
-optional public func searchBarTextDidEndEditing(searchBar: UISearchBar) // called when text ends editing
-@available(iOS 2.0, *)
-optional public func searchBar(searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
-@available(iOS 3.0, *)
-optional public func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool // called before text changes
-
-@available(iOS 2.0, *)
-optional public func searchBarSearchButtonClicked(searchBar: UISearchBar) // called when keyboard search button pressed
-@available(iOS 2.0, *)
-optional public func searchBarBookmarkButtonClicked(searchBar: UISearchBar) // called when bookmark button pressed
-@available(iOS 2.0, *)
-optional public func searchBarCancelButtonClicked(searchBar: UISearchBar) // called when cancel button pressed
-@available(iOS 3.2, *)
-optional public func searchBarResultsListButtonClicked(searchBar: UISearchBar) // called when search results button pressed
-
-@available(iOS 3.0, *)
-optional public func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int)
-
-
-
-
-*/
     

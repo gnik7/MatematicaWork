@@ -16,6 +16,8 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var postTableView: UITableView!
     
+    var hud                     : MBProgressHUD!
+    
     
     //--------------------------------------------
     // MARK: - INIT
@@ -29,6 +31,8 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         postsArray = Array<PostModel>()
         
+        createProgressHUD()
+        
         ServerManager.sharedInstance.getAllPosts({ (response) -> Void in
             
             self.postsArray = response as NSArray as! Array<PostModel>
@@ -37,12 +41,13 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 self.usersArray = response as NSArray as! Array<UserModel>
                 self.postTableView.reloadData()
+                self.hideProgressHUD()
                 }, failure: { (errorMessage) -> Void in
-                    
+                 self.hideProgressHUD()
             })            
             
             },failure:  { (errorMessage) -> Void in
-                
+              self.hideProgressHUD()
         })
 
     }
@@ -91,6 +96,24 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.presentViewController(vc, animated: true, completion: nil)
     }
     //--------------------------------------------
+    
+    //--------------------------------------------
+    // MARK: - Progress
+    //--------------------------------------------
+    
+    //-----------------------------------------
+    func createProgressHUD(){
+        
+        hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().delegate?.window??.rootViewController?.view, animated: true)
+        hud.labelText = "Loading"
+    }
+    //-----------------------------------------
+    func hideProgressHUD(){
+        let window = UIApplication.sharedApplication().delegate?.window??.rootViewController?.view
+        MBProgressHUD.hideHUDForView(window, animated: true)
+        self.hud = nil
+    }
+
 
 }
 

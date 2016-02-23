@@ -22,6 +22,7 @@ class DetailPostViewController: UIViewController, UITableViewDataSource, UITable
     var titlePost   : String!
     var bodyPost    :String!
     
+    var hud                     : MBProgressHUD!
     //--------------------------------------------
     // MARK: - INIT
     //--------------------------------------------
@@ -39,13 +40,16 @@ class DetailPostViewController: UIViewController, UITableViewDataSource, UITable
         
         commentTableView.tableFooterView = UIView()
         
+        createProgressHUD()
+        
         ServerManager.sharedInstance.getPostById(postId,
             success: { (response) -> Void in
                 self.commentsArray = response as NSArray as! Array<CommentModel>
                 self.commentTableView.reloadData()
+                self.hideProgressHUD()
 
             },failure:  { (errorMessage) -> Void in
-                
+                self.hideProgressHUD()
         })
               
     }
@@ -97,6 +101,24 @@ class DetailPostViewController: UIViewController, UITableViewDataSource, UITable
         }
         
     }
+    
+    //--------------------------------------------
+    // MARK: - Progress
+    //--------------------------------------------
+    
+    //-----------------------------------------
+    func createProgressHUD(){
+        
+        hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().delegate?.window??.rootViewController?.view, animated: true)
+        hud.labelText = "Loading"
+    }
+    //-----------------------------------------
+    func hideProgressHUD(){
+        let window = UIApplication.sharedApplication().delegate?.window??.rootViewController?.view
+        MBProgressHUD.hideHUDForView(window, animated: true)
+        self.hud = nil
+    }
+
   
   
 

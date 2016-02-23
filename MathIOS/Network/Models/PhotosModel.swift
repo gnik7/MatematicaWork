@@ -10,10 +10,10 @@ import Foundation
 
 class PhotosModel:NSObject {
     
-    var albumId     : NSNumber!
-    var photoID     : NSNumber!
-    var title       : String!
-    var thumbnailUrl       : String!
+    var albumId             : NSNumber!
+    var photoID             : NSNumber!
+    var title               : String!
+    var thumbnailUrl        : String!
     
     
     override init(){
